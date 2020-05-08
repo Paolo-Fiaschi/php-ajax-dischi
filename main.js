@@ -23,18 +23,24 @@ $( document ).ready(function() {
     // gestione dei generi musicali
     $("select").on("input", function(){
         var filtro = $(this).val().toLowerCase();
-        var boxContainer = $(".container");
-        // console.log(filtro);
-        boxContainer.each(function(){
-            var genereCd = $(this).data('genre').toLowerCase();
-        //   console.log(genereCd);
-            if (filtro === "" || genereCd == filtro) {
-            $(this).show();
-            }else {
-            $(this).hide();
-            }
-        });
-        });            
+        choseGenre(filtro);
+    }); 
+               
     
     
 });
+// funzione per filtro generi
+function choseGenre(filtro){
+    var boxContainer = $(".container");
+    // console.log(filtro);
+    boxContainer.each(function(){
+        var genereCd = $(this).data('genre').toLowerCase();
+    //   console.log(genereCd);
+        if (filtro === "" || genereCd == filtro) {
+        $(this).show();
+        }else {
+        $(this).hide();
+        }
+    });
+
+}
