@@ -36,12 +36,14 @@ $( document ).ready(function() {
     });
     // gestione degli artisti
     $(".artisti").on("input", function(){
+        $(".genere").val("");
         var filtroArtisti = $(this).val();
         console.log(filtroArtisti);
         choseArtist(filtroArtisti);
     });
     // gestione dei generi musicali
     $(".genere").on("input", function(){
+        $(".artisti").val("");
         var filtroGenere = $(this).val().toLowerCase();
         choseGenre(filtroGenere);
     }); 
@@ -67,6 +69,7 @@ function choseArtist(filtroArtisti) {
 function choseGenre(filtroGenere){
     var boxContainer = $(".container");
     // console.log(filtro);
+    // $("select").data('genre').hide();
     boxContainer.each(function(){
         var genereCd = $(this).data('genre').toLowerCase();
     //   console.log(genereCd);
