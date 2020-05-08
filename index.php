@@ -19,6 +19,10 @@
           <option value="Jazz">Jazz</option>
           <option value="Metal">Metal</option>
         </select>
+        <label for="">Scegli per artista</label>
+        <select class="artisti" name="artist">
+          <option value=""></option>
+        </select>
       </div>
           <div class="box">
   
@@ -26,14 +30,14 @@
   
     <!-- TEMPLATE -------------->
 		<script class="album-template" type="text/x-handlebars-template">
-			<div class="container" data-genre="{{genre}}">
+			<div class="container" data-genre="{{genre}}" data-artisti="{{author}}">
 				<div class="album">
 					<img src={{poster}}>
 				</div>
 				<div class="titolo">
 					<h3>{{title}}</h3>
           <div class="artistYear">
-            <p>{{artist}}</p>
+            <p>{{author}}</p>
             <p>{{year}}</p>
           </div>
 				</div>
